@@ -9,10 +9,11 @@
         name = "projektwahl-wasm";
         src = "${self}/projektwahl-wasm";
 
-        nativeBuildInputs = [ rustup pkg-config ];
+        nativeBuildInputs = [ rustup pkg-config nodejs ];
         buildInputs = [ openssl ];
 
         shellHook = ''
+          rustup default nightly
           cargo install wasm-pack
           export PATH=$PATH:$HOME/.cargo/bin/
         '';
