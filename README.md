@@ -31,8 +31,4 @@ https://rust-lang.github.io/async-book/
 
 pkg-config --libs --cflags openssl
 
-
 nix develop
-
-cargo install wasm-pack
-/home/moritz/.cargo/bin/wasm-pack build

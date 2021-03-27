@@ -5,12 +5,17 @@
     defaultPackage.x86_64-linux =
       # Notice the reference to nixpkgs here.
       with import nixpkgs { system = "x86_64-linux"; };
-      stdenv.mkDerivation rec {
+      mkShell {
         name = "projektwahl-wasm";
         src = "${self}/projektwahl-wasm";
 
         nativeBuildInputs = [ rustup pkg-config ];
         buildInputs = [ openssl ];
+
+        shellHook = ''
+          cargo install wasm-pack
+          export PATH=$PATH:$HOME/.cargo/bin/
+        '';
       };
   };
 }
