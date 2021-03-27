@@ -15,3 +15,10 @@ https://rustwasm.github.io/book/reference/add-wasm-support-to-crate.html
 cargo install cargo-generate
 
 cargo generate --git https://github.com/rustwasm/wasm-pack-template
+
+
+wasm-pack build
+
+wasm-pack test --headless --firefox
+
+wasm-pack publish
